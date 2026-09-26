@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Разминка на бумаге</title>
+<style>
+  @page { size: A4; margin: 14mm; }
+  body { font: 11pt/1.45 Georgia, "Times New Roman", serif; color: #111; background: #fff; margin: 0; }
+  h1 { font-size: 15pt; margin: 0 0 2mm; }
+  .lead { font-size: 9.5pt; color: #444; margin: 0 0 5mm; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm 7mm; }
+  .q { break-inside: avoid; border-top: 1.5px solid #111; padding-top: 2mm; }
+  .n { font-weight: bold; font-size: 9pt; letter-spacing: .04em; }
+  pre { font: 9.5pt/1.35 "SF Mono", Menlo, Consolas, monospace; background: #f4f2ee;
+        padding: 2mm 2.5mm; margin: 1.5mm 0; white-space: pre; border-left: 2px solid #c9c4ba; }
+  .ans { font-size: 9pt; color: #555; }
+  .line { border-bottom: 1px dotted #999; height: 5.5mm; margin-top: 1mm; }
+  .name { margin-bottom: 4mm; font-size: 9.5pt; }
+  .name span { display: inline-block; border-bottom: 1px solid #111; width: 55mm; }
+  .key { page-break-before: always; }
+  .key h1 { margin-bottom: 4mm; }
+  .key table { border-collapse: collapse; font-size: 10pt; width: 100%; }
+  .key td { border-bottom: 1px solid #ddd; padding: 2mm 3mm; vertical-align: top; }
+  .key td:first-child { width: 12mm; font-weight: bold; }
+  .key td:nth-child(2) { font-family: "SF Mono", Menlo, Consolas, monospace; width: 38mm; }
+  .note { font-size: 9pt; color: #555; margin-top: 5mm; }
+  @media print { .noprint { display: none; } }
+</style>
+</head>
+<body>
+
+<h1>Разминка на бумаге</h1>
+<p class="lead">Компьютеры закрыты. Десять минут. Напиши, что напечатает каждый кусок кода.
+Не знаешь — ставь прочерк, это нормально и даже полезно.</p>
+<p class="name">Имя: <span></span></p>
+
+<div class="grid">
+
+<div class="q"><div class="n">1</div>
+<pre>x = 5
+y = x
+x = 10
+print(y)</pre>
+<div class="ans">Ответ:</div><div class="line"></div></div>
+
+<div class="q"><div class="n">2</div>
+<pre>velocity = [4, 3]
+v = velocity
+velocity[0] = 99
+print(v)</pre>
+<div class="ans">Ответ:</div><div class="line"></div></div>
+
+<div class="q"><div class="n">3</div>
+<pre>a = {"red": 1}
+a["blue"] = 2
+a["red"] = 7
+print(len(a))</pre>
+<div class="ans">Ответ:</div><div class="line"></div></div>
+
+<div class="q"><div class="n">4</div>
+<pre>a = {"red": 1, "blue": 0}
+c = "blue"
+print(a[c])</pre>
+<div class="ans">Ответ:</div><div class="line"></div></div>
+
+<div class="q"><div class="n">5</div>
+<pre>d = {"Даша": "красный",
+     "Ваня": "синий"}
+for x in d:
+    print(x)</pre>
+<div class="ans">Ответ:</div><div class="line"></div><div class="line"></div></div>
+
+<div class="q"><div class="n">6</div>
+<pre>a = {"x": [{"red": 1},
+           {"blue": 0}]}
+print(a["x"][0]["red"])</pre>
+<div class="ans">Ответ:</div><div class="line"></div></div>
+
+<div class="q"><div class="n">7</div>
+<pre>def hello():
+    print("Hi")
+
+r = hello()
+print(r)</pre>
+<div class="ans">Ответ:</div><div class="line"></div><div class="line"></div></div>
+
+<div class="q"><div class="n">8</div>
+<pre>b = []
+
+if b:
+    print("ДА")
+else:
+    print("НЕТ")</pre>
+<div class="ans">Ответ:</div><div class="line"></div></div>
+
+</div>
+
+<div class="key">
+<h1>Ключ для преподавателя</h1>
+<table>
+<tr><td>1</td><td>5</td><td>Число копируется. <code>y</code> не привязан к <code>x</code>.</td></tr>
+<tr><td>2</td><td>[99, 3]</td><td>Список НЕ копируется. Два имени, один список. Главный вопрос дня.</td></tr>
+<tr><td>3</td><td>2</td><td>Третья строка заменила значение, а не добавила ключ.</td></tr>
+<tr><td>4</td><td>0</td><td>Ключ лежит в переменной. Сначала считается то, что в скобках.</td></tr>
+<tr><td>5</td><td>Даша<br>Ваня</td><td>Цикл по словарю даёт КЛЮЧИ, а не значения.</td></tr>
+<tr><td>6</td><td>1</td><td>Три слоя подряд. Разбирается по одному.</td></tr>
+<tr><td>7</td><td>Hi<br>None</td><td>Функция без <code>return</code> отдаёт <code>None</code>. <code>print</code> не то же самое, что <code>return</code>.</td></tr>
+<tr><td>8</td><td>НЕТ</td><td>Пустой список — ложь.</td></tr>
+</table>
+<p class="note">Печатать: страницу 1 по числу студентов, страницу 2 — себе.
+Тот же лист раздать повторно в конце дня и дать сравнить с утренним.
+Вопросы 2, 5 и 7 — те, где расхождение утром и вечером будет самым заметным.</p>
+</div>
+
+</body>
+</html>
