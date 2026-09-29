@@ -37,6 +37,8 @@ output/
 *.mp4
 *.mov
 *.zip
+*.mp3
+*.wav
 
 # === Тяжёлые файлы данных (> 1 МБ) ===
 data/saved_posts.json
